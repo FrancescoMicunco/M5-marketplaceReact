@@ -53,7 +53,7 @@ const Backoffice = () => {
       console.log(error);
     }
   };
-=======
+
 
 
 const Backoffice = () => {
@@ -208,5 +208,5 @@ const request = {
     </>
   );
 };
-
-export default Backoffice;
+}
+export default Backoffice
