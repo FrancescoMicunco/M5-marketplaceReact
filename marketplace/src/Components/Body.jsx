@@ -28,14 +28,14 @@ const Body = () => {
 
   return (
     <>
+      <h2 className="my-4 text-center">Choose A Product To Buy</h2>
       {products.map((product) => (
-        <div className="container">
-          <h2 className="my-4 text-center">Choose A Product To Buy</h2>
-          <div className="row product-container justify-content-center">
-            <div className="d-flex justify-content-center">
+        <div key={product.id}>
+          <div className="container">
+            <div className="row product-container justify-content-center">
               <div className="col-lg-3 col-md-6 mb-4">
                 <div className="card h-100">
-                  <a href="/detailsPage">
+                  <a href={`/detailsPage/${product.id}`}>
                     <img
                       className="card-img-top"
                       src={product.imageUrl}
@@ -46,11 +46,38 @@ const Body = () => {
                     <h4 className="card-title">
                       <a href={`/detailsPage/${product.id}`}>{product.name}</a>
                     </h4>
-                    <h5>{product.price}</h5>
-                    <p className="card-text">{product.description}</p>
-                    <p className="card-text">{product.price}</p>
-                    <p className="card-text">{product.brand}</p>
-                    <p className="card-text">{product.category}</p>
+                    <div className="col-4 col-md-6">
+                      <div className="row">
+                        <div className="col-12 text-center">
+                          <p>
+                            <strong>Brand - </strong>
+                            {products.brand}
+                          </p>
+                        </div>
+                        <div className="col-12 text-center">
+                          <p>
+                            <strong>Category - </strong>
+                            {product.category}
+                          </p>
+                        </div>
+                        <div className="col-12 text-center">
+                          <p>
+                            <strong>Description - </strong>
+                            {products.description}
+                          </p>
+                        </div>
+                        <div className="col-12 text-center">
+                          <p>
+                            <strong>Price - </strong>£$
+                            {
+                              products.price
+                              /* .toString()
+                              .replace(/\B(?=(\d{3})+(?!\d))/g, ",") */
+                            }
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

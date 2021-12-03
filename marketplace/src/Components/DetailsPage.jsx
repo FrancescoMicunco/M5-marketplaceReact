@@ -5,7 +5,6 @@ const DetailsPage = () => {
   const { productId } = useParams();
 
   const [products, setProducts] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   const getProducts = async () => {
     try {
@@ -22,7 +21,6 @@ const DetailsPage = () => {
       const body = await response.json();
       console.log(body);
       setProducts(body);
-      setLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -36,7 +34,7 @@ const DetailsPage = () => {
     <>
       {products && (
         <>
-          <div class="container">
+          <div className="container">
             <div className="col-12 col-md-6">
               <img src={products.imageUrl} className="img-fluid" alt="" />
             </div>
