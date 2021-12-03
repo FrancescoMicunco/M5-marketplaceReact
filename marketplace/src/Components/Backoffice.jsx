@@ -53,48 +53,6 @@ const Backoffice = () => {
       console.log(error);
     }
   };
-=======
-
-
-const Backoffice = () => {
-    const [name, setName]= useState("")
-const [description, setDescription] = useState("");
-const [brand, setBrand] = useState("");
-const [image, setImage] = useState("");
-const [price, setPrice] = useState("");
-
-
-
-const newProduct = {name, description, brand, image, price}
-
-    const url = "http://localhost:3001/products"
-const request = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ newProduct })
-    };
-
-    const newProductPost = async (e) => {
-  e.preventDefault()
-  try {
-
-    const response = await fetch(url, 
-     request
-    );
-    if (response.ok) {
-      alert("Correctly added product!")
-     
-    } else {
-      console.error("Fetch Failed");
-      
-    }
-  } catch (error) {
-    console.error(error);
-    
-  }
-};
-
-
   return (
     <>
       <div className="container">
@@ -121,11 +79,8 @@ const request = {
               placeholder="Description..."
               rows={3}
               required
-
               value={description}
-
               defaultValue={""}
-
               onChange={(event) => setDescription(event.target.value)}
             />
           </div>
@@ -137,11 +92,8 @@ const request = {
               id="brand"
               placeholder="Brand"
               required
-
               value={brand}
-
-
-              onChange={(event) => setBrand(event.target.value)}
+             onChange={(event) => setBrand(event.target.value)}
             />
           </div>
           <div className="form-group">
@@ -149,15 +101,11 @@ const request = {
             <input
               type="file"
               className="form-control"
-
               onChange={(event) => setImage(event.target.files[0])}
-
               id="image"
               placeholder="Image Link - https://source.unsplash.com/random/800x600"
               required
-              onChange={(event) => setImage(event.target.value)}
-
-            />
+              />
           </div>
           <div className="form-group">
             <label htmlFor="price">Price</label>
@@ -167,7 +115,6 @@ const request = {
               id="price"
               placeholder="£10"
               required
-
               value={price}
               onChange={(event) => setPrice(event.target.value)}
             />
@@ -181,22 +128,14 @@ const request = {
               placeholder="Category"
               required
               value={category}
-              onChange={(event) => setCategory(event.target.value)}
-
-              onChange={(event) => setPrice(event.target.value)}
-
-            />
+              onChange={(event) => setCategory(event.target.value)}/>
           </div>
           <div className="d-flex justify-content-between btn-area">
             <div className="creation">
-
               <button type="submit" className="btn btn-success create-edit">
                 Create
               </button>
-
-              <button type="submit"  className="btn btn-success create-edit"
-                >Create</button>
-
+              <button type="submit"  className="btn btn-success create-edit">Create</button>
               <button type="reset" className="btn btn-warning ml-auto">
                 Clear
               </button>
@@ -207,6 +146,6 @@ const request = {
       </div>
     </>
   );
-};
+}
 
-export default Backoffice;
+export default Backoffice
