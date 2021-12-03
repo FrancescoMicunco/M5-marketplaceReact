@@ -1,0 +1,20 @@
+.product-image {
+  min-height: 250px;
+  max-height: 250px;
+  object-fit: cover;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.product-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.submitted input:invalid,
+.submitted textarea:invalid {
+  border: 1px solid red;
+}
