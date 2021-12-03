@@ -19,9 +19,10 @@ const request = {
         body: JSON.stringify({ newProduct })
     };
 
-    const newProductPost = async () => {
-  
+    const newProductPost = async (e) => {
+  e.preventDefault()
   try {
+
     const response = await fetch(url, 
      request
     );
