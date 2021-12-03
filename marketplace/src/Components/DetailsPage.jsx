@@ -36,7 +36,7 @@ const DetailsPage = () => {
         <>
           <div className="container">
             <div className="col-12 col-md-6">
-              <img src={products.imageUrl} className="img-fluid" alt="" />
+              <img src={products.image} className="img-fluid" alt="" />
             </div>
             <div className="col-12 col-md-6">
               <div className="row">

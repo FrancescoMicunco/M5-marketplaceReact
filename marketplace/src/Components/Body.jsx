@@ -36,11 +36,7 @@ const Body = () => {
               <div className="col-lg-3 col-md-6 mb-4">
                 <div className="card h-100">
                   <a href={`/detailsPage/${product.id}`}>
-                    <img
-                      className="card-img-top"
-                      src={product.imageUrl}
-                      alt=""
-                    />
+                    <img className="card-img-top" src={product.image} alt="" />
                   </a>
                   <div className="card-body">
                     <h4 className="card-title">
@@ -51,7 +47,7 @@ const Body = () => {
                         <div className="col-12 text-center">
                           <p>
                             <strong>Brand - </strong>
-                            {products.brand}
+                            {product.brand}
                           </p>
                         </div>
                         <div className="col-12 text-center">
@@ -63,17 +59,15 @@ const Body = () => {
                         <div className="col-12 text-center">
                           <p>
                             <strong>Description - </strong>
-                            {products.description}
+                            {product.description}
                           </p>
                         </div>
                         <div className="col-12 text-center">
                           <p>
                             <strong>Price - </strong>£$
-                            {
-                              products.price
-                              /* .toString()
-                              .replace(/\B(?=(\d{3})+(?!\d))/g, ",") */
-                            }
+                            {product.price
+                              .toString()
+                              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                           </p>
                         </div>
                       </div>
