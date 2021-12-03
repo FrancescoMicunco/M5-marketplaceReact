@@ -1,10 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Reviews from "./Reviews";
 
 const DetailsPage = () => {
   const { productId } = useParams();
 
   const [products, setProducts] = useState(null);
+  const navigate = useNavigate();
 
   const getProducts = async () => {
     try {
@@ -29,6 +31,21 @@ const DetailsPage = () => {
   useEffect(() => {
     getProducts();
   }, []);
+
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:3001/products/" + productId,
+        {
+          method: "DELETE",
+        }
+      );
+      if (!response.ok) throw new Error("Fetch Failed");
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
@@ -62,12 +79,16 @@ const DetailsPage = () => {
                 </div>
                 <div className="col-12 text-center">
                   <button className="btn btn-primary">Edit</button>
+                  <button className="btn btn-danger" onClick={handleDelete}>
+                    Delete
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </>
       )}
+      <Reviews productId={productId} />
     </>
   );
 };
