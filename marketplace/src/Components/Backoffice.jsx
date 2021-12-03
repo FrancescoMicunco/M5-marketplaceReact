@@ -10,7 +10,7 @@ const [price, setPrice] = useState("");
 
 
 
-const newProduct = {}
+const newProduct = {name, description, brand, image, price}
 
     const url = "http://localhost:3001/products"
 const request = {
@@ -101,7 +101,8 @@ const request = {
           </div>
           <div className="d-flex justify-content-between btn-area">
             <div className="creation">
-              <button className="btn btn-success create-edit">Create</button>
+              <button type="submit"  className="btn btn-success create-edit"
+                >Create</button>
               <button type="reset" className="btn btn-warning ml-auto">
                 Clear
               </button>
