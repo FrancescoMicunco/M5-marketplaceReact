@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const Body = () => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  
 
   const getProducts = async () => {
     try {
@@ -16,7 +16,7 @@ const Body = () => {
       const body = await response.json();
       console.log(body);
       setProducts(body);
-      setLoading(false);
+     
     } catch (error) {
       console.error(error);
     }
