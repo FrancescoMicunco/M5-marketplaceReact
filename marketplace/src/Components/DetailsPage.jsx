@@ -34,7 +34,7 @@ const DetailsPage = () => {
     <>
       {products && (
         <>
-          <div className="container">
+          <div className="container d-flex ">
             <div className="col-12 col-md-6">
               <img src={products.image} className="img-fluid" alt="" />
             </div>
@@ -59,6 +59,9 @@ const DetailsPage = () => {
                       .toString()
                       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                   </p>
+                </div>
+                <div className="col-12 text-center">
+                  <button className="btn btn-primary">Edit</button>
                 </div>
               </div>
             </div>
