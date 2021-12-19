@@ -65,11 +65,11 @@ const DetailsProduct = () => {
             <Col md="2">
               <Button
                 onClick={() => {
-                  alert("are you shure?")
+                  
                   let q = quantity + 1;
-                  console.log(q)
+                  
                   setQuantity(q);
-                  console.log(quantity)
+                  
                   modifyCart();
                   
                 }}
