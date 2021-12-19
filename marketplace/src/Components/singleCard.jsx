@@ -1,32 +1,23 @@
 import React from "react";
-import {Card, Button} from "react-bootstrap"
+import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const SingleCard = ({products}) =>{
-    
-    return(
-<>
-    
-    {products.map((e)=>
-<Card max-width="100px">
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>{e.name}</Card.Title>
-    console.log(e.name)
-    <Card.Text>
-      {e.description}
-    </Card.Text>
-<Link to={`/details/${e.title}`}>
-    <Button variant="primary">Show details</Button>
-</Link>
-    
-  </Card.Body>
-</Card>
-    
-    )}
-    
-</>
-    )
-}
+const SingleCard = ({props}) => {
 
-export default SingleCard
+return (
+  <Link to={`/product/${props.id}`}>
+    <Card>
+      <Card.Img variant="top" src={props.image} />
+      <Card.Body>
+        <Card.Title>{props.name}</Card.Title>
+        <Card.Text>{props.description}</Card.Text>
+        <Card.Text>{props.price}</Card.Text>
+        <Button variant="primary">More Details</Button>
+      </Card.Body>
+    </Card>
+  </Link>
+);
+   };
+
+export default SingleCard;
+
