@@ -1,3 +1,6 @@
+import { Button } from "react-bootstrap";
+
+
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,6 +30,12 @@ const Navbar = () => {
               <a className="nav-link" href="/backoffice">
                 Back Office
               </a>
+            </li>
+            <li className="nav-item">
+              <Button variant="success" className="nav-link" href="/cart">
+                Shopping Cart
+              </Button>
+              
             </li>
           </ul>
         </div>
