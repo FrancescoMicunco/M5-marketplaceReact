@@ -1,25 +1,25 @@
-import './App.css';
-import MyNavbar from './Components/Navbar'
-import Backoffice from './Components/Backoffice';
-import Homepage from './Components/Homepage'
-import 'bootstrap/dist/css/bootstrap.css'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import "./App.css";
+import NavBar from "./Components/NavBar";
+import Backoffice from "./Components/Backoffice.jsx";
+import Body from "./Components/Body";
+import Cart from "./Components/Cart";
+import DetailsProduct from "./Components/DetailsProduct.jsx";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
-    return (
-      <div className="App">
-        <BrowserRouter>
-          <MyNavbar />
-        </BrowserRouter>
+  return (
+    <div className="App">
+      <NavBar />
+      <Router>
         <Routes>
-          <Route path="/" element={<Homepage />}></Route>
-          <Route path="/" element={<Backoffice />}></Route>
+          <Route path="/" element={<Body />} />
+          <Route path="/backoffice" element={<Backoffice />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/product/:productId" element={<DetailsProduct />} />
         </Routes>
-
-       
-      </div>
-    );
+      </Router>
+    </div>
+  );
 }
 
 export default App;
